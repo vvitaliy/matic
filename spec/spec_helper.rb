@@ -6,6 +6,7 @@ require 'csv'
 require 'faker'
 require 'rspec/expectations'
 require 'pry'
+require 'json'
 require_relative '../lib/functional/_init'
 require_relative '../lib/helpers/_init'
 
