@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'client-api'
 require 'csv'
 require 'faker'
+require 'rest-client'
 require 'rspec/expectations'
 require 'pry'
 require 'json'
@@ -16,12 +17,12 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = 'results.txt'
 
   config.before(:all) do
-    @app = Matic::Pages.new
+    @app = Matic::Folders.new
   end
 
   ClientApi.configure do |configure|
-    configure.base_url = 'https://testtaskmatic.herokuapp.com/'
-    config.headers = {'Authorization' => 'Bearer 1f43d455fgjkgfjgf48'}
+    configure.base_url = 'https://testtaskmatic.herokuapp.com'
+    configure.headers = { 'Authorization' => 'Bearer 1f43d455fgjkgfjgf48' }
     configure.json_output = {
       'Content-Type' => 'application/json',
       'Accept' => 'application/json'

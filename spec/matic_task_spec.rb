@@ -5,26 +5,17 @@ require_relative 'spec_helper'
 RSpec.describe 'Matic' do
   context 'Test task' do
     it 'customers information can be successfully imported' do
+      # using client-api gem
+      # client_api_imports.generate_valid_csv_file
+      # client_api_imports.create_new_import
+      # client_api_imports.start_import
+      # client_api_imports.take_import_details
 
-      # @api.get('/api/users/2')
-      # expect(@api.status).to eq(200)
-      # puts @api.body
-      imports.generate_valid_csv_file
-
-      # # create a new import
-      imports.create_new_import
-
-      # # start import
-      # imports.start_import
-
-      # # get import
-      # imports.get_import_details
-
-      # # get customer
-      # imports.get_list_of_customers
-
-      # # check import status
-      # imports.check_import_details
+      # using rest-client gem
+      rest_client_imports.generate_valid_csv_file
+      import_id = rest_client_imports.create_new_import
+      rest_client_imports.start_import(import_id)
+      rest_client_imports.take_import_details(import_id)
     end
   end
 end

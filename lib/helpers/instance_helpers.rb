@@ -4,5 +4,6 @@ module PageInstanceHelper
   extend Forwardable
 
   def_delegators :@app,
-                 :imports
+                 :client_api_imports,
+                 :rest_client_imports
 end

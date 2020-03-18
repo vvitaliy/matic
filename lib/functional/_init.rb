@@ -2,4 +2,5 @@
 
 require_relative 'matic'
 require_relative 'base_page'
-require_relative 'import/_init'
+require_relative 'client_api_import/_init'
+require_relative 'rest_client_import/_init'
